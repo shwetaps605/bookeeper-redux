@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { userLoggedIn, userLoggedOut, setName} from './features/users/userSlice'
+import { addUser } from './features/users/userSlice'
 import { useDispatch,useSelector} from 'react-redux'
+import { login,logout } from './features/login/loggerSlice'
 
 
 function App() {
   const user = useSelector(state => state.users)
   console.log("USER",user)
+  const dispatch = useDispatch()
 
   const [username,setUsername] = useState("")
 
@@ -17,8 +18,15 @@ function App() {
         placeholder='enter your name'
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+        required
       />
-      <button>
+      <button onClick={
+        () => {
+          dispatch(addUser({name:username}))
+          setUsername("")
+          dispatch(login())
+          }
+        }>
         LogIn
       </button>
     </div>
