@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.signin-container {
+  background-color: rgb(188, 238, 243);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  max-width: 400px;
+  max-height: 200px;
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 15px;
+  position: absolute;
+  inset: 0;
+  
+}
