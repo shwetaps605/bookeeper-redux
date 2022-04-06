@@ -12,13 +12,13 @@ const Books = () => {
         addBook({ title: bookTitle, author: author })
     }
     return (
-        <>
+        <div className='book-container' >
             <header>
                 <h2>Books</h2>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, iste.</p>
             </header>
             <main>
-                <form className='book-form' onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <input type="text"
                         placeholder=' book title'
                         value={bookTitle}
@@ -32,7 +32,7 @@ const Books = () => {
                     />
                 </form>
             </main>
-        </>
+        </div>
 
     )
 
