@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import { addBook, booksSelector } from '../features/books/booksSlice'
 import BookItem from './BookItem'
-import { useDispatch,useSelect } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 
 const Books = () => {
 
     const [bookTitle, setBookTitle] = useState('')
     const [author, setAuthor] = useState('')
-    const books = useSelect(booksSelector)
+    const books = useSelector(booksSelector)
+    const dispatch = useDispatch()
+
+    console.log("BOOKS are", books)
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        addBook({ title: bookTitle, author: author })
+        dispatch(addBook({ title: bookTitle, author: author }))
     }
     return (
         <div className='book-container' >
@@ -33,10 +36,12 @@ const Books = () => {
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
                     />
+
+                    <input type='submit' value="Add"/>
                 </form>
             </main>
             <div className="book-items-container">
-                <BookItem title={bookTitle} author />
+                
             </div>
         </div>
 
