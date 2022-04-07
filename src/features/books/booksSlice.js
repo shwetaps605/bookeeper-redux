@@ -9,6 +9,8 @@ const bookSlice = createSlice({
     }
 })
 
+export const booksSelector = state => state.books
+
 export const { addBook} = bookSlice.actions
 
 export default bookSlice.reducer

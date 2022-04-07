@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { addBook } from '../features/books/booksSlice'
+import { addBook, booksSelector } from '../features/books/booksSlice'
+import BookItem from './BookItem'
+import { useDispatch,useSelect } from 'react-redux'
 
 const Books = () => {
 
     const [bookTitle, setBookTitle] = useState('')
     const [author, setAuthor] = useState('')
+    const books = useSelect(booksSelector)
 
 
     const handleSubmit = (e) => {
@@ -32,6 +35,9 @@ const Books = () => {
                     />
                 </form>
             </main>
+            <div className="book-items-container">
+                <BookItem title={bookTitle} author />
+            </div>
         </div>
 
     )
