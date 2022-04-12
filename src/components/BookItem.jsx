@@ -2,7 +2,7 @@ import React from 'react'
 
 const BookItem = ({title, author}) => {
   return (
-    <div>
+    <div className='book-item'>
         <header>
             <h2>{title}</h2>
         </header>
