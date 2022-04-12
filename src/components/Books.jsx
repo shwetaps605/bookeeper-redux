@@ -10,13 +10,19 @@ const Books = () => {
     const books = useSelector(booksSelector)
     const dispatch = useDispatch()
 
-    console.log("BOOKS are", books)
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
         dispatch(addBook({ title: bookTitle, author: author }))
+        clear()
     }
+
+    const clear = () => {
+        setBookTitle("")
+        setAuthor("")
+    }
+
+
     return (
         <div className='book-container' >
             <header>
@@ -41,6 +47,9 @@ const Books = () => {
                 </form>
             </main>
             <div className="book-items-container">
+                {
+                    books.map( book => <BookItem key={book.id} title={book.title} author={book.author}></BookItem>)
+                }
                 
             </div>
         </div>

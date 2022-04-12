@@ -8,7 +8,8 @@ const SignIn = () => {
   const dispatch = useDispatch()
   const [username, setUsername] = useState("")
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     dispatch(addUser({ name: username }))
     setUsername("")
     dispatch(login())
