@@ -44,6 +44,11 @@ code {
   inset: 0;
 }
 
+.book-container header {
+  background-color: antiquewhite;
+  min-width: 100%;
+}
+
 .book-items-container {
   display: flex;
   flex-direction: column;
@@ -58,7 +63,7 @@ code {
 
 .book-item {
   background-color: thistle;
-  padding: .25em 2em;
+  padding: .25em 1em;
   margin-bottom: 1em;
 
 }

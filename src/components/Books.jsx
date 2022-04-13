@@ -27,7 +27,9 @@ const Books = () => {
         <div className='book-container' >
             <header>
                 <h2>Books</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi, iste.</p>
+                <p>
+                    {books.length} books added
+                </p>
             </header>
             <main>
                 <form onSubmit={handleSubmit}>
