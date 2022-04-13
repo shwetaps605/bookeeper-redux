@@ -50,7 +50,7 @@ const Books = () => {
             </main>
             <div className="book-items-container">
                 {
-                    books.map( book => <BookItem key={book.id} title={book.title} author={book.author}></BookItem>)
+                    books.map( book => <BookItem key={book.id} book = {book}></BookItem>)
                 }
                 
             </div>

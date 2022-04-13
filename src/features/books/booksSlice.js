@@ -16,12 +16,16 @@ const bookSlice = createSlice({
             }
             state.push(book)
         },
+        removeBook: (state,action) => {
+            console.log(action.payload)
+            return state.filter( book => book.id !== action.payload)
+        }
 
     }
 })
 
 export const booksSelector = state => state.books
 
-export const { addBook} = bookSlice.actions
+export const { addBook, removeBook} = bookSlice.actions
 
 export default bookSlice.reducer
