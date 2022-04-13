@@ -12,13 +12,18 @@ const bookSlice = createSlice({
             let book = {
                 id: ++bookId,
                 title: action.payload.title,
-                author:action.payload.author
+                author:action.payload.author,
+                isRead:false
             }
             state.push(book)
         },
         removeBook: (state,action) => {
             console.log(action.payload)
             return state.filter( book => book.id !== action.payload)
+        },
+        markAsRead: (state,action) => {
+            console.log("Marking this book as read",action.payload)
+
         }
 
     }
