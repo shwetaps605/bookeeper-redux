@@ -23,6 +23,8 @@ const bookSlice = createSlice({
         },
         markAsRead: (state,action) => {
             console.log("Marking this book as read",action.payload)
+            const book = state.find( book => book.id === action.payload)
+            console.log("bOOK FOUND", book)
 
         }
 
@@ -31,6 +33,6 @@ const bookSlice = createSlice({
 
 export const booksSelector = state => state.books
 
-export const { addBook, removeBook} = bookSlice.actions
+export const { addBook, removeBook, markAsRead} = bookSlice.actions
 
 export default bookSlice.reducer
