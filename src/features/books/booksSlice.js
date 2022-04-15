@@ -23,6 +23,7 @@ const bookSlice = createSlice({
         },
         markAsRead: (state,action) => {
             // const book = state.find( book => book.id === action.payload)
+            return state.map( book => book.id !== action.payload ? book : {...book, isRead:true})
 
         }
 
